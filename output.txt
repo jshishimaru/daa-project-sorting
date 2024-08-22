@@ -1,0 +1,5 @@
+Time of sorting 1: 7.47733s
+Time of sorting 2: 19.0491s
+Time of sorting 3: 3.8092s
+Time of sorting 4: 0.012718s
+Time of sorting 5: 0.048791s
