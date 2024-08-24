@@ -17,16 +17,25 @@ void sort1( int *a , int n ){ // selection sort
 
 }
 
-void sort2( int *a , int n ){ // bubble sort
+void sort2( int *a , int n ){ // intelligent bubble sort
 
     for( int i = 0 ; i < n ; i++ ){
+
+        bool swapped = false;
+
         for( int j = 0 ; j < n-i-1 ; j++ ){
             if( a[j] > a[j+1] ){
                 int temp = a[j];
                 a[j] = a[j+1];
                 a[j+1] = temp;
+                swapped = true;
             }
         }
+
+        if( !swapped ){
+            break;
+        }
+
     }
 
 }

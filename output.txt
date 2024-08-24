@@ -1,5 +1,20 @@
-Time of sorting 1: 7.47733s
-Time of sorting 2: 19.0491s
-Time of sorting 3: 3.8092s
-Time of sorting 4: 0.012718s
-Time of sorting 5: 0.048791s
+For Randomized input array
+
+Algorithm 4 took 0.0060278 seconds on avg and is a nlogn algorithm
+Algorithm 5 took 0.0137996 seconds on avg and is a nlogn algorithm
+Algorithm 3 took 0.960587 seconds on avg and is a linear algorithm
+Algorithm 1 took 1.4698 seconds on avg and is a linear algorithm
+Algorithm 2 took 5.07213 seconds on avg and is a linear algorithm
+
+
+For Sorted input array
+
+Algorithm 4 took 0.0041034 seconds on avg and is a merge sort
+Algorithm 5 took 0.966112 seconds on avg and is a quick sort
+Algorithm 1 took 1.44078 seconds on avg and is a selection sort
+
+
+For Partially Sorted input array
+
+Algorithm 3 took 0.0004844 seconds on avg and is a insertion sort
+Algorithm 2 took 0.0006028 seconds on avg and is a bubble sort
