@@ -11,14 +11,14 @@ double time_sorting( int *a , int n , void (*sort)( int *a , int n)){
     clock_t start = clock();
 
     int *b = new int[n];
-    for( int i=0 ; i<5 ; ++i){
+    for( int i=0 ; i<1 ; ++i){
     
         copy(a,a+n,b);
         sort(b,n);
     
     }
     clock_t end = clock();
-    return (double)(end - start) / (CLOCKS_PER_SEC * (double)5);
+    return (double)(end - start) / (CLOCKS_PER_SEC );
 }
 
 typedef void (*sort_function)(int *a, int n);
@@ -68,16 +68,16 @@ int main(){
     nlogn_alogrithms.push_back(times[0]);
     nlogn_alogrithms.push_back(times[1]);
 
-    vector <pair<double,pair<sort_function,int>>> linear_alogrithms;
-    linear_alogrithms.push_back(times[2]);
-    linear_alogrithms.push_back(times[3]);
-    linear_alogrithms.push_back(times[4]);
+    vector <pair<double,pair<sort_function,int>>> quadratic_alogrithms;
+    quadratic_alogrithms.push_back(times[2]);
+    quadratic_alogrithms.push_back(times[3]);
+    quadratic_alogrithms.push_back(times[4]);
 
     for( auto p : nlogn_alogrithms ){
         cout << "Algorithm " << p.second.second << " took " << p.first << " seconds on avg and is a nlogn algorithm" << endl;
     }
-    for( auto p : linear_alogrithms ){
-        cout << "Algorithm " << p.second.second << " took " << p.first << " seconds on avg and is a linear algorithm" << endl;
+    for( auto p : quadratic_alogrithms ){
+        cout << "Algorithm " << p.second.second << " took " << p.first << " seconds on avg and is a quadratic algorithm" << endl;
     }
     cout << endl << endl;
 
@@ -104,21 +104,21 @@ int main(){
     cout << "Algorithm " << times[1].second.second << " took " << times[1].first << " seconds on avg and is a quick sort" << endl;
 
     times.clear();
-    time = time_sorting(a,n,linear_alogrithms[0].second.first);
-    times.push_back({time,linear_alogrithms[0].second });
+    time = time_sorting(a,n,quadratic_alogrithms[0].second.first);
+    times.push_back({time,quadratic_alogrithms[0].second });
 
-    time = time_sorting(a,n,linear_alogrithms[1].second.first);
-    times.push_back({time,linear_alogrithms[1].second });
+    time = time_sorting(a,n,quadratic_alogrithms[1].second.first);
+    times.push_back({time,quadratic_alogrithms[1].second });
 
-    time = time_sorting(a,n,linear_alogrithms[2].second.first);
-    times.push_back({time,linear_alogrithms[2].second });
+    time = time_sorting(a,n,quadratic_alogrithms[2].second.first);
+    times.push_back({time,quadratic_alogrithms[2].second });
 
     sort(times.begin(),times.end());
 
     cout << "Algorithm " << times[2].second.second << " took " << times[2].first << " seconds on avg and is a selection sort" << endl;
-    for(auto x : linear_alogrithms){
+    for(auto x : quadratic_alogrithms){
         if( x.second.second == times[2].second.second ){
-                    linear_alogrithms.erase(find(linear_alogrithms.begin(),linear_alogrithms.end(),x));       
+                    quadratic_alogrithms.erase(find(quadratic_alogrithms.begin(),quadratic_alogrithms.end(),x));       
         }
     }
     cout << endl << endl;
@@ -131,11 +131,11 @@ int main(){
         cin>>a[i];
     }
 
-    time = time_sorting(a,n,linear_alogrithms[0].second.first);
-    times.push_back({time,linear_alogrithms[0].second });
+    time = time_sorting(a,n,quadratic_alogrithms[0].second.first);
+    times.push_back({time,quadratic_alogrithms[0].second });
 
-    time = time_sorting(a,n,linear_alogrithms[1].second.first);
-    times.push_back({time,linear_alogrithms[1].second });
+    time = time_sorting(a,n,quadratic_alogrithms[1].second.first);
+    times.push_back({time,quadratic_alogrithms[1].second });
 
     sort(times.begin(),times.end());
 

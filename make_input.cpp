@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <random>
-
+using namespace std;
 int main() {
     const int SIZE = 50000; // Change this to 1000000 for size 10^6
     std::ofstream outputFile("input.txt");
@@ -40,17 +40,20 @@ int main() {
     // outputFile << std::endl;
         
     // partial sorted array
-    for (int i = 1; i <= SIZE; i += 4) {
-        std::vector<int> partialArray;
-        for (int j = i; j < i + 4; ++j) {
-            partialArray.push_back(j);
-        }
-        std::shuffle(partialArray.begin(), partialArray.end(), gen);
-        for (int num : partialArray) {
-            outputFile << num << " ";
-        }
+    vector <int> partial;
+    for( int i = 1 ; i <= SIZE/2 ; i++){
+         
+        partial.push_back(i);
+
+    }
+    shuffle(partial.begin(),partial.end(),gen);
+    for( int i = 0 ; i < SIZE/2 ; i++){
+        outputFile << partial[i] << " ";
     }
 
+    for( int i = SIZE/2 + 1 ; i <= SIZE ; i++){
+        outputFile << i << " ";
+    }
 
 
     outputFile.close();
