@@ -54,7 +54,16 @@ int main() {
     for( int i = SIZE/2 + 1 ; i <= SIZE ; i++){
         outputFile << i << " ";
     }
-
+    //Reverse Sorted
+    vector<int> array(1000);
+    
+    for (int i = 0; i < 1000; ++i) {
+        array[i] = 1000 - i;
+    }
+    
+    for (int i = 0; i < 1000; ++i) {
+        outputFile << array[i] << " ";
+    }
 
     outputFile.close();
     std::cout << "Array generated and written to input.txt successfully." << std::endl;
