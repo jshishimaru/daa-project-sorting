@@ -141,5 +141,27 @@ int main(){
 
     cout << "Algorithm " << times[0].second.second << " took " << times[0].first << " seconds on avg and is a insertion sort" << endl;
     cout << "Algorithm " << times[1].second.second << " took " << times[1].first << " seconds on avg and is a bubble sort" << endl;
+    
+    //REverse sorted array
+    
+     cout << "For Reverse Sorted input array" << endl << endl;
 
+    // Assuming the reverse sorted array is provided directly in input.txt
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
+    }
+
+    times.clear();
+
+    for(int i = 0; i < 5; i++){
+        time = time_sorting(a, n, sort_functions[i]);
+        times.push_back({time, {sort_functions[i], i + 1}});
+    }
+
+    sort(times.begin(), times.end());
+
+    for(auto p : times){
+        cout << "Algorithm " << p.second.second << " took " << p.first << " seconds on avg on reverse sorted array" << endl;
+    }
+    
 }
